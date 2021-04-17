@@ -35,5 +35,5 @@
 </head>
 <body>
 <div class="header" id="header">
-    <h1>serialif color API <span class="version">1.0.0</span></h1>
+    <h1>Serialif Color API <span class="version">1.0.0</span></h1>
 </div>
