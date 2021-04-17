@@ -41,7 +41,8 @@ if (php_result !== 'error404') {
 }
 
 
-function getColors() {
+function getColors()
+{
     return fetch('https://racocote.serialif.com/rest')
         .then(response => response.json())
         .then(response => colorize(response))
@@ -49,7 +50,8 @@ function getColors() {
 }
 
 
-function colorize(result) {
+function colorize(result)
+{
     const baseWithoutAlpha = result['base_without_alpha']['hex']['value']
     const complementaryWithoutAlpha = result['complementary_without_alpha']['hex']['value']
 

@@ -2,7 +2,6 @@
 
 namespace App\Router;
 
-
 use App\Controller;
 
 class Route

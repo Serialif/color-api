@@ -3,7 +3,6 @@
 
 namespace App\Config;
 
-
 class Colors
 {
     public const KEYWORDS = [

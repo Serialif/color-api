@@ -2,7 +2,6 @@
 
 namespace App\Router;
 
-
 use App\Controller;
 
 class Router
@@ -24,7 +23,7 @@ class Router
      * @param string|null $name
      * @return Route
      */
-    public function get(string $path,  $callable, ?string $name = null): Route
+    public function get(string $path, $callable, ?string $name = null): Route
     {
         return $this->add($path, $callable, $name, 'GET');
     }
@@ -36,7 +35,7 @@ class Router
      * @param string|null $name
      * @return Route
      */
-    public function post(string $path,  $callable, ?string $name = null): Route
+    public function post(string $path, $callable, ?string $name = null): Route
     {
         return $this->add($path, $callable, $name, 'POST');
     }

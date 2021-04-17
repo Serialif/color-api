@@ -3,7 +3,6 @@
 
 namespace App\Config;
 
-
 class Regex
 {
     /*

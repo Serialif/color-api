@@ -44,10 +44,11 @@ require 'templates/_header.php' ?>
                 <?php foreach (TableRequests::COLOR_TYPE as $nameType => $colorTypes) : ?>
                     <?php foreach ($colorTypes as $colorType) : ?>
                         <tr>
-                            <?php if ($colorType['row'] !== 0): ?>
+                            <?php if ($colorType['row'] !== 0) : ?>
                                 <td rowspan="<?= $colorType['row'] ?>"><?= $colorType['type'] ?></td>
                                 <td rowspan="<?= $colorType['row'] ?>"><?= $colorType['value'] ?></td>
-                                <td rowspan="<?= $colorType['row'] ?>" class="request-note"><?= $colorType['note'] ?></td>
+                                <td rowspan="<?= $colorType['row'] ?>"
+                                    class="request-note"><?= $colorType['note'] ?></td>
                             <?php endif ?>
 
                             <td class="request-td-uri"><?= $colorType['request'] ?></td>

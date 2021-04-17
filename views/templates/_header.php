@@ -1,3 +1,4 @@
+<?php ?>
 <!doctype html>
 <html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
@@ -9,9 +10,10 @@
           content="An API to have a random color and black or white depending on its brightness">
     <meta name="KEYWORDS"
           content="sebastien filaire,code,syntaxe,développement,web,html,balise,texte,markdown,css,propriété,valeur,
-          sass,bootstrap,postcss,php,symfony,twig,composer,packagist,git,heredoc,variable,fonction,classe,objet,vscode
-          ,extension,emmet,javascript,react,nodejs,js,sql,mysql,mariadb,phpmyadmin,adminer,dokuwiki,programmation,frontend,backend
-          ,site,internet,hébergement,référencement,grafikart,serialif,formation,tutoriel,lien,api,color,racocote">
+          sass,bootstrap,postcss,php,symfony,twig,composer,packagist,git,heredoc,variable,fonction,classe,objet,vscode,
+          extension,emmet,javascript,react,nodejs,js,sql,mysql,mariadb,phpmyadmin,adminer,dokuwiki,programmation,
+          frontend,backend,site,internet,hébergement,référencement,grafikart,serialif,formation,tutoriel,lien,api,
+          color">
     <meta name="OWNER" content="Sébastien F">
     <meta name="ROBOTS" content="index,all">
     <meta name="Reply-to" content="contact@serialif.com">
@@ -24,8 +26,6 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="shortcut icon" href="/images/favicon.png">
-
-<!--    <link rel="preload" as="style" href="/css/app.css">-->
 
     <link rel="stylesheet" href="/css/prism.css">
     <link rel="stylesheet" href="/css/app10.css">

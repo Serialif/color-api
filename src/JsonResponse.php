@@ -3,7 +3,6 @@
 
 namespace App;
 
-
 use App\Color\ColorUtilities;
 use SSNepenthe\ColorUtils\Colors\Color;
 use function SSNepenthe\ColorUtils\grayscale;

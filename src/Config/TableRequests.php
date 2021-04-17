@@ -3,7 +3,6 @@
 
 namespace App\Config;
 
-
 class TableRequests
 {
     public const COLOR_TYPE = [
@@ -59,7 +58,8 @@ class TableRequests
             [
                 'row' => 2,
                 'type' => 'RGB',
-                'value' => 'rgb(<span class="request-value">85,</span> <span class="request-value">102,</span> <span class="request-value">119</span>)',
+                'value' => 'rgb(<span class="request-value">85,</span> <span class="request-value">102,</span>
+                    <span class="request-value">119</span>)',
                 'note' => 'without rgb, ( ), or spaces',
                 'request' => '<a href="85,102,119">' .
                     '<span class="muted">https://color.serialif.com/</span>' .

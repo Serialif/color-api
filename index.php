@@ -29,7 +29,7 @@ $router->get('/hsl=:color', 'hsla')->with('color', Regex::HSLA);
 $router->get('/hsla=:color', 'hsla')->with('color', Regex::HSLA);
 
 $router->get('/:type=:color', 'wrongColor')
-    ->with('type','(hex|rgba?|hsla?|keyword)')
+    ->with('type', '(hex|rgba?|hsla?|keyword)')
     ->with('color', Regex::EVERYTHING_ELSE);
 
 $router->get('/:else', 'wrongApiFormat')

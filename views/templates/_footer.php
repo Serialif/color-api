@@ -1,3 +1,4 @@
+<?php ?>
 <footer class="footer glass" id="footer">
     <div class="blank-bottom"></div>
     <div>Made with <span class="clockwiseRotation">❤️</span><span class="counterclockwiseRotation">❤️</span> by

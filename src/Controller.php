@@ -2,7 +2,6 @@
 
 namespace App;
 
-
 use App\Color\ColorUtilities;
 use function SSNepenthe\ColorUtils\color;
 use function SSNepenthe\ColorUtils\hsl;

@@ -1,3 +1,4 @@
+<?php ?>
 <div class="nav" id="nav">
     <a href="/#anchor-request">Request</a>
     <a href="/#anchor-colors">Colors</a>
