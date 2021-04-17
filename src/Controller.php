@@ -17,7 +17,7 @@ class Controller
     public function home()
     {
         $randomColor = ColorUtilities::randomColor();
-        $response = JsonResponse::get($randomColor);
+        $response = JsonResponse::getArray($randomColor);
         $json = json_encode($response, JSON_PRETTY_PRINT);
         require 'views/home.php';
     }

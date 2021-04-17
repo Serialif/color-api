@@ -25,7 +25,7 @@ class JsonResponse
      * @param Color $color
      * @return array
      */
-    private static function getArray(Color $color): array
+    public static function getArray(Color $color): array
     {
         $contrastedText = ColorUtilities::contrastedColor($color->getRgb()->toHexArray());
         $colorWithoutAlpha = ColorUtilities::withoutAlpha($color->getRgb()->toHexArray());
