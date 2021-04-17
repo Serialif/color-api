@@ -12,7 +12,7 @@ require 'templates/_header.php' ?>
     <div class="title section">
         <div class="subTitle">What's this?</div>
         This is an REST API to get a requested color, its complementary and its grayscale in different formats
-        and the black or white text corresponding to each color according to their brightness.
+        and the black or white text corresponding to each color according to its brightness.
     </div>
 
     <div class="separation"></div>
