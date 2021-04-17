@@ -1,0 +1,32 @@
+.nav {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: 600;
+  position: sticky;
+  top: 22px;
+  box-shadow: 0 0 20px #11111188;
+
+  a {
+    color: inherit;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    transition: all .1s;
+
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+      background: #333333;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .nav{
+    font-size: 16px;
+  }
+}

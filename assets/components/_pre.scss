@@ -1,0 +1,33 @@
+pre {
+  //background: #eee !important;
+  border: 1px solid #11111122;
+  font-size: .8rem !important;
+  max-width: 600px;
+  padding: 10px;
+  width: 90%;
+  background: #333333 !important;
+
+  code {
+    color: #353535 !important;
+    text-shadow: none !important;
+    word-break: break-word;
+    //font-family: $fonts !important;
+    font-size: 12px !important;
+
+    .property {
+      color: $table-color--base !important;
+    }
+
+    .string {
+      color: $table-color--type !important;
+    }
+
+    .number {
+      color: $table-color--value !important;
+    }
+  }
+}
+
+pre code .punctuation, .operator {
+  color: $table-color--base !important;
+}

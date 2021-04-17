@@ -1,0 +1,131 @@
+@import 'utils/variables';
+@import 'base/base';
+@import 'components/color-change';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'components/table';
+@import 'components/pre';
+@import 'layout/footer';
+
+.version{
+  font-size: 19px;
+}
+
+.muted2 {
+  color: #888;
+}
+
+.text {
+  margin: 10px 0 0 0;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.separation{
+  padding-top: 70px;
+}
+
+.title {
+  text-align: center;
+}
+
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 50px 0;
+  padding: 0 5px;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.api-return {
+  text-align: left;
+}
+
+.api-return-section {
+  margin: 2px 0;
+}
+
+.api-return-detail {
+  margin: 2px 0;
+  padding-left: 10px;
+}
+
+.json-response {
+  width: 100%;
+}
+
+.request-doc {
+  text-align: center;
+  width: 100%;
+}
+
+.json-request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.json-color {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.return {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.returned-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.examples div div:nth-child(2n) {
+  border: 1px solid #11111122;
+  border-radius: 0.3em;
+}
+
+.examples div div:first-child {
+  padding: 5px 0 0 5px;
+  text-align: left;
+}
+
+.examples div div:nth-child(2) {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin: 0 0 10px 0;
+}
+
+
+@media (min-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+}

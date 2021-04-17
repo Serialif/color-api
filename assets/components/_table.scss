@@ -1,0 +1,87 @@
+table {
+  background: #333;
+  border-collapse: collapse;
+  color: $table-color--base;
+  font-family: $fonts;
+  font-size: 12px;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+th {
+  background: #111;
+}
+
+th, td {
+  border: 1px solid #888;
+  padding: 10px;
+  word-break: break-word;
+}
+
+thead {
+  tr {
+    background: #EEEEEE;
+    text-align: center;
+  }
+}
+
+.request-th-type {
+  width: 10%;
+}
+
+.request-th-value {
+  width: 30%;
+}
+
+.request-th-note,
+.request-note {
+  display: none;
+}
+
+.request-th-uri {
+  width: 40%;
+}
+
+.request-td-uri {
+  text-align: left;
+
+  a {
+    color: $table-color--base;
+  }
+}
+
+.request-type {
+  color: $table-color--type;
+}
+
+.request-equals {
+  color: $table-color--base;
+}
+
+.request-value {
+  color: $table-color--value;
+}
+
+@media (min-width: 600px) {
+  table {
+    width: 80%;
+  }
+  .request-th-type {
+    width: 10%;
+  }
+
+  .request-th-value {
+    width: 30%;
+  }
+
+  .request-th-note,
+  .request-note {
+    display: table-cell;
+    width: 25%;
+  }
+
+  .request-th-uri {
+    width: 40%;
+  }
+}

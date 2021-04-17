@@ -1,0 +1,38 @@
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  /*background: #11111108;*/
+  color: #111111;
+  font-family: $fonts;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  transition: all .3s;
+  width: 100vw;
+}
+
+a, a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+
+a {
+  &:hover {
+    color: #111111;
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
