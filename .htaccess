@@ -1,0 +1,49 @@
+# Expires headers (for better cache control)
+<IfModule mod_expires.c>
+    ExpiresActive on
+    # Perhaps better to whitelist expires rules? Perhaps.
+    ExpiresDefault                              "access plus 1 month"
+    # cache.appcache needs re-requests in FF 3.6 (thanks Remy ~Introducing HTML5)
+    ExpiresByType text/cache-manifest           "access plus 0 seconds"
+    # Your document html
+    ExpiresByType text/html                     "access plus 0 seconds"
+    # Data
+    ExpiresByType text/xml                      "access plus 0 seconds"
+    ExpiresByType application/xml               "access plus 0 seconds"
+    ExpiresByType application/json              "access plus 0 seconds"
+    # Feed
+    ExpiresByType application/rss+xml           "access plus 1 hour"
+    ExpiresByType application/atom+xml          "access plus 1 hour"
+    # Favicon (cannot be renamed)
+    ExpiresByType image/x-icon                  "access plus 1 week"
+    # Media: images, video, audio
+    ExpiresByType image/gif                     "access plus 4 months"
+    ExpiresByType image/png                     "access plus 4 months"
+    ExpiresByType image/jpeg                    "access plus 4 months"
+    ExpiresByType image/webp                    "access plus 4 months"
+    ExpiresByType video/ogg                     "access plus 1 month"
+    ExpiresByType audio/ogg                     "access plus 1 month"
+#    ExpiresByType video/mp4                     "access plus 1 month"
+    ExpiresByType video/webm                    "access plus 1 month"
+    # HTC files  (css3pie)
+    ExpiresByType text/x-component              "access plus 1 month"
+    # Webfonts
+    ExpiresByType font/ttf                      "access plus 4 months"
+    ExpiresByType font/otf                      "access plus 4 months"
+    ExpiresByType font/woff                     "access plus 4 months"
+    ExpiresByType font/woff2                    "access plus 4 months"
+    ExpiresByType image/svg+xml                 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+    # CSS and JavaScript
+    ExpiresByType text/css                      "access plus 1 year"
+    ExpiresByType application/javascript        "access plus 1 year"
+</IfModule>
+
+RewriteEngine on
+#RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^dist/([a-z]*)\.(.*).(js) dis/$1.js [L]
+#RewriteRule ^styles/(.*)\.css styles/$1.css [L]
+#RewriteRule ^script/(.*)\.js script/$1.js [L]
+#RewriteRule ^images/(.*)\.(jpg|png|svg) images/$1.$2 [L]
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

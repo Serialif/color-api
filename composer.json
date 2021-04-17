@@ -1,0 +1,24 @@
+{
+    "name": "serialif/color_convert",
+    "description": "color convert api",
+    "type": "api",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Serialif",
+            "email": "contact@serialif.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    },
+    "require": {
+        "ext-json": "*",
+        "ssnepenthe/color-utils": "^0.4.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    }
+}

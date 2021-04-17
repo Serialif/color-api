@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  /*background: #11111108;*/
+  color: #111111;
+  font-family: "Fira Sans", sans-serif;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  transition: all 0.3s;
+  width: 100vw;
+}
+
+a, a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #111111;
+  text-decoration: underline;
+}
+
+h1 {
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.change {
+  align-content: center;
+  align-items: center;
+  background: #359d37;
+  border: 1px solid #11111122;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.7rem;
+  justify-content: center;
+  padding: 4px 5px 3px 5px;
+  position: sticky;
+  right: 5px;
+  top: 0;
+  transition: all 0.3s;
+  box-shadow: 0 0 20px #11111188;
+}
+
+.on {
+  background: #9d3535;
+  color: #fff;
+}
+
+@media (min-width: 600px) {
+  .change:hover {
+    box-shadow: 0 0 20px #11111188;
+  }
+}
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.nav {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  height: 40px;
+  justify-content: space-around;
+  font-size: 12px;
+  font-weight: 600;
+  position: sticky;
+  top: 22px;
+  box-shadow: 0 0 20px #11111188;
+}
+.nav a {
+  color: inherit;
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.1s;
+}
+.nav a:hover {
+  color: inherit;
+  text-decoration: none;
+  background: #333333;
+}
+
+@media (min-width: 600px) {
+  .nav {
+    font-size: 16px;
+  }
+}
+table {
+  background: #333;
+  border-collapse: collapse;
+  color: #ddd;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 12px;
+  table-layout: fixed;
+  text-align: center;
+  width: 100%;
+}
+
+th {
+  background: #111;
+}
+
+th, td {
+  border: 1px solid #888;
+  padding: 10px;
+  word-break: break-word;
+}
+
+thead tr {
+  background: #EEEEEE;
+  text-align: center;
+}
+
+.request-th-type {
+  width: 10%;
+}
+
+.request-th-value {
+  width: 30%;
+}
+
+.request-th-note {
+  width: 25%;
+}
+
+.request-th-uri {
+  width: 40%;
+}
+
+.request-td-uri {
+  text-align: left;
+}
+.request-td-uri a {
+  color: #ddd;
+}
+
+.request-type {
+  color: #6da2db;
+}
+
+.request-equals {
+  color: #ddd;
+}
+
+.request-value {
+  color: #71db6d;
+}
+
+@media (min-width: 600px) {
+  table {
+    width: 80%;
+  }
+}
+pre {
+  border: 1px solid #11111122;
+  font-size: 0.8rem !important;
+  max-width: 600px;
+  padding: 10px;
+  width: 90%;
+  background: #333333 !important;
+}
+pre code {
+  color: #353535 !important;
+  text-shadow: none !important;
+  word-break: break-word;
+  font-size: 12px !important;
+}
+pre code .property {
+  color: #ddd !important;
+}
+pre code .string {
+  color: #6da2db !important;
+}
+pre code .number {
+  color: #71db6d !important;
+}
+
+pre code .punctuation, .operator {
+  color: #ddd !important;
+}
+
+.footer {
+  background: #111111;
+  bottom: 0;
+  color: #fff;
+  font-size: 0.6rem;
+  left: 0;
+  padding: 3px 0;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:visited {
+  color: #fff;
+}
+.footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+#footer-arrow {
+  background: #00000022;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  justify-content: space-around;
+  line-height: 1em;
+  padding: 0 5px;
+  position: fixed;
+  right: 0;
+  transform: scale(1, 1);
+  transition: transform 0.2s;
+  z-index: 1;
+}
+
+#footer-arrow-up {
+  height: 30px;
+  transition: transform 0.2s;
+}
+
+#footer-arrow-down {
+  height: 30px;
+  transition: transform 0.2s;
+}
+
+.clockwiseRotation {
+  animation: clockwiseRotation 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.counterclockwiseRotation {
+  animation: counterclockwiseRotation 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@-webkit-keyframes clockwiseRotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes counterclockwiseRotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+.muted2 {
+  color: #888;
+}
+
+.text {
+  margin: 10px 0 0 0;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.separation {
+  padding-top: 70px;
+}
+
+.title {
+  text-align: center;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 50px 0;
+  padding: 0 5px;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.api-return {
+  text-align: left;
+}
+
+.api-return-section {
+  margin: 2px 0;
+}
+
+.api-return-detail {
+  margin: 2px 0;
+  padding-left: 10px;
+}
+
+.json-response {
+  width: 100%;
+}
+
+.request-doc {
+  text-align: center;
+  width: 100%;
+}
+
+.json-request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.json-color {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.return {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.returned-color {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.examples {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.examples div div:nth-child(2n) {
+  border: 1px solid #11111122;
+  border-radius: 0.3em;
+}
+
+.examples div div:first-child {
+  padding: 5px 0 0 5px;
+  text-align: left;
+}
+
+.examples div div:nth-child(2) {
+  align-items: center;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin: 0 0 10px 0;
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
