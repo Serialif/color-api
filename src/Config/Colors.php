@@ -5,6 +5,10 @@ namespace App\Config;
 
 class Colors
 {
+    /*
+     * Color keywords
+     */
+
     public const KEYWORDS = [
         '000000' => 'black',
         '000080' => 'navy',

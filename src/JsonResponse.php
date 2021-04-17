@@ -10,7 +10,22 @@ use function SSNepenthe\ColorUtils\invert;
 
 class JsonResponse
 {
-    public static function get(Color $color): array
+    /**
+     * Display the JSON
+     * @param Color $color
+     */
+    public static function displayJSON(Color $color):void{
+        $jsonResponse = self::getArray($color);
+        header('Content-Type: application/json');
+        echo json_encode($jsonResponse, JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * Return the full array to return the JSON
+     * @param Color $color
+     * @return array
+     */
+    private static function getArray(Color $color): array
     {
         $contrastedText = ColorUtilities::contrastedColor($color->getRgb()->toHexArray());
         $colorWithoutAlpha = ColorUtilities::withoutAlpha($color->getRgb()->toHexArray());
@@ -29,6 +44,11 @@ class JsonResponse
         ];
     }
 
+    /**
+     * Returns all color formats
+     * @param Color $color
+     * @return array
+     */
     private static function getAllColorFormats(Color $color): array
     {
         $hasAlpha = $color->getRgb()->hasAlpha();
@@ -43,6 +63,11 @@ class JsonResponse
         ];
     }
 
+    /**
+     * Returns the color in HEX format
+     * @param Color $color
+     * @return array
+     */
     private static function hex(Color $color): array
     {
         $value = $color->getRgb()->toHexString();
@@ -51,6 +76,11 @@ class JsonResponse
         return self::colorJson($value, $composition);
     }
 
+    /**
+     * Returns the color in RGB/RGBA format
+     * @param Color $color
+     * @return array
+     */
     private static function rgb(Color $color): array
     {
         $value = $color->getRgb()->toString();
@@ -59,6 +89,11 @@ class JsonResponse
         return self::colorJson($value, $composition);
     }
 
+    /**
+     * Returns the color in HSL/HSLA format
+     * @param Color $color
+     * @return array
+     */
     private static function hsl(Color $color): array
     {
         $value = self::hslRoundedString($color->getHsl()->toArray());
@@ -67,6 +102,30 @@ class JsonResponse
         return self::colorJson($value, $composition, true);
     }
 
+    /**
+     * Returns the color in HSL format with rounded values
+     * @param array $hsl
+     * @return string
+     */
+    private static function hslRoundedString(array $hsl): string
+    {
+        $type = isset($hsl['alpha']) ? 'hsla' : 'hsl';
+        $hsl['hue'] = (string)round($hsl['hue']);
+        $hsl['saturation'] = round($hsl['saturation']) . '%';
+        $hsl['lightness'] = round($hsl['lightness']) . '%';
+        $hsl['alpha'] = isset($hsl['alpha']) ? (string)round($hsl['alpha'], 2) : null;
+        if (is_null($hsl['alpha'])) {
+            unset($hsl['alpha']);
+        }
+
+        return $type . '(' . implode(', ', $hsl) . ')';
+    }
+
+    /**
+     * Returns the color in HSL format without rounding values
+     * @param Color $color
+     * @return array
+     */
     private static function hslRaw(Color $color): array
     {
         $value = $color->getHsl()->toString();
@@ -75,6 +134,13 @@ class JsonResponse
         return self::colorJson($value, $composition);
     }
 
+    /**
+     * Returns the value and composition of a color
+     * @param string $value
+     * @param array $composition
+     * @param bool $rounded
+     * @return array
+     */
     private static function colorJson(string $value, array $composition, bool $rounded = false): array
     {
         $compo = [];
@@ -95,20 +161,5 @@ class JsonResponse
         }
 
         return $return;
-    }
-
-
-    private static function hslRoundedString(array $hsl): string
-    {
-        $type = isset($hsl['alpha']) ? 'hsla' : 'hsl';
-        $hsl['hue'] = (string)round($hsl['hue']);
-        $hsl['saturation'] = round($hsl['saturation']) . '%';
-        $hsl['lightness'] = round($hsl['lightness']) . '%';
-        $hsl['alpha'] = isset($hsl['alpha']) ? (string)round($hsl['alpha'], 2) : null;
-        if (is_null($hsl['alpha'])) {
-            unset($hsl['alpha']);
-        }
-
-        return $type . '(' . implode(', ', $hsl) . ')';
     }
 }

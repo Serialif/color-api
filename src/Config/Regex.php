@@ -6,7 +6,7 @@ namespace App\Config;
 class Regex
 {
     /*
-     * Constantes Regex des formats de couleurs passés dans l'URL
+     * Regex constants of the color formats passed in the URL
      */
     public const NB_0_TO_100 = '([1-9][0-9]?|100)';
     public const NB_0_TO_255 = '([1-9]?[0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])';

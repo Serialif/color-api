@@ -5,6 +5,7 @@ namespace App\Color;
 use App\Config\Colors;
 use SSNepenthe\ColorUtils\Colors\Color;
 use function SSNepenthe\ColorUtils\color;
+use function SSNepenthe\ColorUtils\rgb;
 
 class ColorUtilities
 {
@@ -26,7 +27,7 @@ class ColorUtilities
     }
 
     /**
-     * Vérifie si un mot clé correspond a un couleur
+     * Checks if a keyword matches a color
      * @param string $keyword
      * @return bool
      */
@@ -62,6 +63,11 @@ class ColorUtilities
         }
     }
 
+    /**
+     * Remove the alpha component from a color
+     * @param array $hex
+     * @return Color
+     */
     public static function withoutAlpha(array $hex): Color
     {
         if (isset($hex['alpha'])) {

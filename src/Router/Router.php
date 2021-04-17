@@ -7,9 +7,9 @@ use App\Controller;
 class Router
 {
 
-    private string $url; // URL sur laquelle on souhaite se rendre
-    private array $routes = []; // Liste des routes
-    private array $namedRoutes = []; // Liste des routes avec leur nom
+    private string $url; // URL we want to go to
+    private array $routes = []; // List of routes
+    private array $namedRoutes = []; // List of routes with their name
 
     public function __construct($url)
     {
@@ -17,7 +17,7 @@ class Router
     }
 
     /**
-     * Ajoute une route en GET
+     * Add a route in GET
      * @param string $path
      * @param callable|string $callable
      * @param string|null $name
@@ -29,7 +29,7 @@ class Router
     }
 
     /**
-     * Ajoute une route en POST
+     * Add a route in POST
      * @param string $path
      * @param callable|string $callable
      * @param string|null $name
@@ -41,7 +41,7 @@ class Router
     }
 
     /**
-     * Vérifie si une route correspond à l'Url
+     * Checks if a route matches the Url
      * @return mixed
      */
     public function match()
@@ -60,7 +60,7 @@ class Router
     }
 
     /**
-     * Génère une URL à partir du nom de la route
+     * Generate a URL from the name of the route
      * @param string $name
      * @param array $params
      * @return mixed
@@ -75,7 +75,7 @@ class Router
     }
 
     /**
-     * Ajoute une route
+     * Add a route
      * @param string $path
      * @param callable|string $callable
      * @param string|null $name

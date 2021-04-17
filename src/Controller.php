@@ -11,6 +11,9 @@ use function SSNepenthe\ColorUtils\rgba;
 
 class Controller
 {
+    /**
+     * Home
+     */
     public function home()
     {
         $randomColor = ColorUtilities::randomColor();
@@ -19,60 +22,81 @@ class Controller
         require 'views/home.php';
     }
 
+    /**
+     * Convert a color passed to keyword format
+     * @param string $colorValue
+     */
     public function keyword(string $colorValue)
     {
         if (!ColorUtilities::keywordExists($colorValue)) {
             self::wrongColor('keyword', $colorValue);
         } else {
             $color = color($colorValue);
-            $jsonResponse = JsonResponse::get($color);
-            header('Content-Type: application/json');
-            echo json_encode($jsonResponse, JSON_PRETTY_PRINT);
+            JsonResponse::displayJSON($color);
         }
     }
 
+    /**
+     * Convert a color passed to HEX format
+     * @param string $colorValue
+     */
     public function hex(string $colorValue)
     {
         $color = color('#' . $colorValue);
-        $jsonResponse = JsonResponse::get($color);
-        header('Content-Type: application/json');
-        echo json_encode($jsonResponse, JSON_PRETTY_PRINT);
+        JsonResponse::displayJSON($color);
     }
 
+    /**
+     * Convert a color passed to RGB format
+     * @param string $colorValue
+     */
     public function rgb(string $colorValue)
     {
         $colorValue = explode(',', $colorValue);
         $color = rgb($colorValue[0], $colorValue[1], $colorValue[2]);
-
-        dump($color);
+        JsonResponse::displayJSON($color);
     }
 
+    /**
+     * Convert a color passed to RGBA format
+     * @param string $colorValue
+     */
     public function rgba(string $colorValue)
     {
         $colorValue = str_replace(',.', ',0.', $colorValue);
         $colorValue = explode(',', $colorValue);
         $color = rgba($colorValue[0], $colorValue[1], $colorValue[2], $colorValue[3]);
-
-        dump($color);
+        JsonResponse::displayJSON($color);
     }
 
+    /**
+     * Convert a color passed to HSL format
+     * @param string $colorValue
+     */
     public function hsl(string $colorValue)
     {
         $colorValue = explode(',', $colorValue);
         $color = hsl($colorValue[0], $colorValue[1], $colorValue[2]);
-
-        dump($color);
+        JsonResponse::displayJSON($color);
     }
 
+    /**
+     * Convert a color passed to HSLA format
+     * @param string $colorValue
+     */
     public function hsla(string $colorValue)
     {
         $colorValue = str_replace(',.', ',0.', $colorValue);
         $colorValue = explode(',', $colorValue);
         $color = hsla($colorValue[0], $colorValue[1], $colorValue[2], $colorValue[3]);
-
-        dump($color);
+        JsonResponse::displayJSON($color);
     }
 
+    /**
+     * Returns a JSON indicating that the color format is not valid
+     * @param string $type
+     * @param string $color
+     */
     public function wrongColor(string $type, string $color)
     {
         header('Content-Type: application/json');
@@ -86,6 +110,10 @@ class Controller
         ], JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Returns a JSON indicating that the API format is not valid
+     * @param string $else
+     */
     public function wrongApiFormat(string $else)
     {
         header('Content-Type: application/json');
@@ -99,6 +127,9 @@ class Controller
         ], JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Refers to page 404 (no longer used)
+     */
     public function error404()
     {
         require 'views/error404.php';

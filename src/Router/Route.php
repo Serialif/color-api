@@ -17,20 +17,20 @@ class Route
 
     public function __construct(string $path, $callable)
     {
-        $this->path = trim($path, '/');  // Retire les / en début et fin de chaine
+        $this->path = trim($path, '/');  // Remove / at the beginning and end of the string
         $this->callable = $callable;
     }
 
     /**
-     * Vérifie si une route correspond à l'Url
+     * Checks if a route matches the Url
      * @param string $url
      * @return bool
      */
     public function match(string $url): bool
     {
-        $url = trim($url, '/'); // Retire les / en début et fin de chaine
+        $url = trim($url, '/'); // Remove / at the beginning and end of the string
 
-        // On crée une expression régulière pour récupérer les paramètres
+        // Create a regular expression to retrieve the parameters
         $path = preg_replace_callback('%:([\w]+)%', [$this, 'paramMatch'], $this->path);
         $regex = "%^$path$%i";
 
@@ -38,13 +38,13 @@ class Route
             return false;
         }
 
-        array_shift($matches); // On récupère uniquement le paramètre
-        $this->matches = $matches;  // On sauvegarde les paramètre dans l'instance pour plus tard
+        array_shift($matches); // Retrieve only the parameter
+        $this->matches = $matches;  // Save the settings in the instance for later
         return true;
     }
 
     /**
-     * Renvoie le nom du paramètre
+     * Returns the name of the parameter
      * @param array $match
      * @return string
      */
@@ -57,7 +57,7 @@ class Route
     }
 
     /**
-     * Exécute la fonction anonyme en lui passant les paramètres récupérés lors du preg_match()
+     * Execute the anonymous function, passing it the parameters retrieved during preg_match ()
      * @return ?bool
      */
     public function call(): ?bool
@@ -71,7 +71,7 @@ class Route
     }
 
     /**
-     * Ajoute des contraintes sur les paramètres
+     * Add constraints on parameters
      * @param string $param
      * @param string $regex
      * @return $this
@@ -79,11 +79,11 @@ class Route
     public function with(string $param, string $regex): Route
     {
         $this->params[$param] = str_replace('(', '(?:', $regex);
-        return $this; // On retourne l'objet pour enchainer les arguments
+        return $this; // Return the object to chain the arguments
     }
 
     /**
-     * Renvoi l'Url en ajoutant les paramètres
+     * Return the Url adding the parameters
      * @param array $params
      * @return string
      */

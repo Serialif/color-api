@@ -14,7 +14,7 @@ $router->get('/', 'home');
 $router->get('/:color', 'keyword')->with('color', Regex::KEYWORD);
 $router->get('/:color', 'hex')->with('color', Regex::HEX);
 $router->get('/:color', 'rgb')->with('color', Regex::RGB);
-$router->get('/:color', 'rgb')->with('color', Regex::RGBA);
+$router->get('/:color', 'rgba')->with('color', Regex::RGBA);
 
 $router->get('/keyword=:color', 'keyword')->with('color', Regex::KEYWORD);
 

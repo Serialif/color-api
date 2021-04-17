@@ -5,6 +5,9 @@ namespace App\Config;
 
 class TableRequests
 {
+    /*
+     * Request table cells
+     */
     public const COLOR_TYPE = [
         'KEYWORD' => [
             [
