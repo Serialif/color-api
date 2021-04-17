@@ -28,12 +28,12 @@
 <!--    <link rel="preload" as="style" href="/css/app.css">-->
 
     <link rel="stylesheet" href="/css/prism.css">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app10.css">
     <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Play&display=swap">
 
     <title>serialif color API</title>
 </head>
 <body>
 <div class="header" id="header">
-    <h1>serialif color API</h1>
+    <h1>serialif color API <span class="version">1.0.0</span></h1>
 </div>

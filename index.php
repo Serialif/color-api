@@ -32,4 +32,7 @@ $router->get('/:type=:color', 'wrongColor')
     ->with('type','(hex|rgba?|hsla?|keyword)')
     ->with('color', Regex::EVERYTHING_ELSE);
 
+$router->get('/:else', 'wrongApiFormat')
+    ->with('else', Regex::EVERYTHING_ELSE);
+
 $router->match();

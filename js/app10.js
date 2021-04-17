@@ -4,6 +4,7 @@ let change = document.getElementById('change')
 let header = document.getElementById('header')
 let nav = document.getElementById('nav')
 
+
 const examplesTextBackground = [
     'base',
     'base_without_alpha',

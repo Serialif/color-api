@@ -135,8 +135,9 @@ thead tr {
   width: 30%;
 }
 
-.request-th-note {
-  width: 25%;
+.request-th-note,
+.request-note {
+  display: none;
 }
 
 .request-th-uri {
@@ -165,6 +166,24 @@ thead tr {
 @media (min-width: 600px) {
   table {
     width: 80%;
+  }
+
+  .request-th-type {
+    width: 10%;
+  }
+
+  .request-th-value {
+    width: 30%;
+  }
+
+  .request-th-note,
+.request-note {
+    display: table-cell;
+    width: 25%;
+  }
+
+  .request-th-uri {
+    width: 40%;
   }
 }
 pre {
@@ -270,6 +289,10 @@ pre code .punctuation, .operator {
     -webkit-transform: rotate(-360deg);
   }
 }
+.version {
+  font-size: 19px;
+}
+
 .muted2 {
   color: #888;
 }
@@ -387,4 +410,4 @@ pre code .punctuation, .operator {
   }
 }
 
-/*# sourceMappingURL=app.css.map */
+/*# sourceMappingURL=app10.css.map */

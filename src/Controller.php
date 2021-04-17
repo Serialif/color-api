@@ -87,6 +87,19 @@ class Controller
         ], JSON_PRETTY_PRINT);
     }
 
+    public function wrongApiFormat(string $else)
+    {
+        header('Content-Type: application/json');
+        echo json_encode([
+            'status' => 'error',
+            'error' => [
+                'type' => 'wrong API request',
+                'value' => $else,
+                'message' => 'not a valid API request'
+            ]
+        ], JSON_PRETTY_PRINT);
+    }
+
     public function error404()
     {
         require 'views/error404.php';

@@ -47,7 +47,7 @@ require 'templates/_header.php' ?>
                             <?php if ($colorType['row'] !== 0): ?>
                                 <td rowspan="<?= $colorType['row'] ?>"><?= $colorType['type'] ?></td>
                                 <td rowspan="<?= $colorType['row'] ?>"><?= $colorType['value'] ?></td>
-                                <td rowspan="<?= $colorType['row'] ?>"><?= $colorType['note'] ?></td>
+                                <td rowspan="<?= $colorType['row'] ?>" class="request-note"><?= $colorType['note'] ?></td>
                             <?php endif ?>
 
                             <td class="request-td-uri"><?= $colorType['request'] ?></td>
